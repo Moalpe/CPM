@@ -1,0 +1,233 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Book a Service</title>
+
+</head>
+
+
+<body>
+
+<div class="reservation-box">
+
+    <h1>Book Our Services</h1>
+
+    <form
+        action="https://formspree.io/f/xaenyqrn"
+        method="POST"
+    >
+
+        <!-- Customer Name -->
+        <label for="name">
+            Full Name
+        </label>
+
+        <input
+            type="text"
+            id="name"
+            name="name"
+            required
+        >
+
+
+        <!-- Phone -->
+        <label for="phone">
+            Phone Number
+        </label>
+
+        <input
+            type="tel"
+            id="phone"
+            name="phone"
+            required
+        >
+
+
+        <!-- Email -->
+        <label for="email">
+            Email
+        </label>
+
+        <input
+            type="email"
+            id="email"
+            name="email"
+            required
+        >
+
+
+        <!-- Service -->
+        <label for="service">
+            Choose a Service
+        </label>
+
+        <select
+            id="service"
+            name="service"
+            required
+        >
+
+            <option value="">
+                -- Select Service --
+            </option>
+
+            <option value="Cleaning">
+                Cleaning
+            </option>
+
+            <option value="Painting">
+                Painting
+            </option>
+
+            <option value="Repair">
+                Repair
+            </option>
+
+            <option value="Cleaning & Painting">
+                Cleaning & Painting
+            </option>
+
+            <option value="Painting & Repair">
+                Painting & Repair
+            </option>
+
+            <option value="Other">
+                Other
+            </option>
+
+        </select>
+
+
+        <!-- Date -->
+        <label for="date">
+            Choose a Date
+        </label>
+
+        <input
+            type="date"
+            id="date"
+            name="date"
+            required
+        >
+
+
+        <!-- Time -->
+        <label for="time">
+            Choose a Time
+        </label>
+
+        <select
+            id="time"
+            name="time"
+            required
+        >
+
+            <option value="">
+                -- Select Time --
+            </option>
+
+            <option value="8:00 AM">
+                8:00 AM
+            </option>
+
+            <option value="9:00 AM">
+                9:00 AM
+            </option>
+
+            <option value="10:00 AM">
+                10:00 AM
+            </option>
+
+            <option value="11:00 AM">
+                11:00 AM
+            </option>
+
+            <option value="12:00 PM">
+                12:00 PM
+            </option>
+
+            <option value="1:00 PM">
+                1:00 PM
+            </option>
+
+            <option value="2:00 PM">
+                2:00 PM
+            </option>
+
+            <option value="3:00 PM">
+                3:00 PM
+            </option>
+
+            <option value="4:00 PM">
+                4:00 PM
+            </option>
+
+        </select>
+
+
+        <!-- Additional Information -->
+        <label for="message">
+            Additional Information
+        </label>
+
+        <textarea
+            id="message"
+            name="message"
+            rows="4"
+            placeholder="Tell us about the job..."
+        ></textarea>
+
+
+        <!-- Email subject -->
+        <input
+            type="hidden"
+            name="_subject"
+            value="New Cleaning, Painting & Repair Reservation"
+        >
+
+
+        <!-- Submit -->
+        <button type="submit">
+            Request Reservation
+        </button>
+
+    </form>
+
+</div>
+
+
+<script>
+
+    // Prevent selecting dates in the past
+
+    const dateInput = document.getElementById("date");
+
+    const today = new Date();
+
+    const year = today.getFullYear();
+
+    const month = String(today.getMonth() + 1)
+        .padStart(2, "0");
+
+    const day = String(today.getDate())
+        .padStart(2, "0");
+
+    dateInput.min = `${year}-${month}-${day}`;
+
+</script>
+
+
+</body>
+
+</html>
+```
